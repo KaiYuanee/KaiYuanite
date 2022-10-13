@@ -31,4 +31,8 @@ async def hi(ctx):
 async def ping(ctx):
     await ctx.send(f"The ping time is {bot.latency*1000:.2f} (ms)")
 
+@bot.command()
+async def kaiyuanee(ctx):
+    await ctx.send(jdata["KaiYuanee_Instagram"])
+
 bot.run(jdata["TOKEN"])
