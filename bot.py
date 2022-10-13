@@ -19,6 +19,10 @@ async def on_member_remove(member):
     await channel.send(f"{member} leave!")
 
 @bot.command()
+async def hi(ctx):
+    await ctx.send(f"Hello, I am KaiYuanite, a robot made by KaiYuanee!")
+
+@bot.command()
 async def ping(ctx):
     await ctx.send(f"The ping time is {bot.latency*1000:.2f} (ms)")
 
