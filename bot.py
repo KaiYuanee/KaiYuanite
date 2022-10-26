@@ -29,6 +29,6 @@ async def hi(ctx):
 
 @bot.command()
 async def ping(ctx):
-    await ctx.send(f"The ping time is {bot.latency*1000:.2f} (ms)")
+    await ctx.send(f"The ping time is {bot.latency*1000:.2f} (ms).")
 
 bot.run(jdata["TOKEN"])
