@@ -41,7 +41,7 @@ async def guide(ctx):
 `~kaiyuanee`：提供我的作者 KaiYuanee 的 Instagram 帳號連結。
 `~int_rand`：後面需加上 2 個整數參數，我會幫你在這兩個整數中隨機取出一個整數。
 `~rickroll`：如果你想被 Rickroll 的話就...使用吧！
-`~daily_fortune`：取得你的每日運勢。運勢共有 7 種，分別為「大吉」、「吉」、「中吉」、「小吉」、「末吉」、「凶」、「大凶」。僅供參考，請勿迷信！
+`~daily_fortune`：取得你的每日運勢。運勢共有 7 種，分別為「大吉」(5%)、「吉」(10%)、「中吉」(15%)、「小吉」(25%)、「末吉」(25%)、「凶」(15%)、「大凶」(5%)。僅供參考，請勿迷信！
     """
     await ctx.send(content)
 
@@ -82,7 +82,8 @@ async def rickroll(ctx):
 
 @bot.command()
 async def daily_fortune(ctx):
-    fortuneList = ["大吉", "吉", "中吉", "小吉", "末吉", "凶", "大凶"]
+    fortuneList = ["大吉"] * 5 + ["吉"] * 10 + ["中吉"] * 15 + \
+        ["小吉"] * 25 + ["末吉"] * 25 + ["凶"] * 15 + ["大凶"] * 5
     await ctx.send(f"@{ctx.message.author} 的每日運勢：{random.choice(fortuneList)}")
 
 bot.run(jdata["TOKEN"])
